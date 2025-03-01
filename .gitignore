@@ -10,3 +10,5 @@ yarn-debug.log*
 
 # 환경 변수 파일 (필요에 따라)
 .env
+
+.next/
