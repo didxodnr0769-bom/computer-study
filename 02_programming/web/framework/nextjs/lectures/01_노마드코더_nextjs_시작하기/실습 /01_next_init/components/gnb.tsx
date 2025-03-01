@@ -16,8 +16,8 @@ export default function Gnb() {
           </Link>
         </li>
         <li>
-          <Link href="/main/mode-edit">
-            모드 편집 {pathname === "/main/mode-edit" ? "🤏" : ""}
+          <Link href="/main/edit">
+            편집 {pathname === "/main/edit" ? "🤏" : ""}
           </Link>
         </li>
       </ul>
