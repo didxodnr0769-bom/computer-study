@@ -1,5 +1,3 @@
-import Gnb from "../../components/gnb";
-
 const Home = () => {
   return (
     <div>
