@@ -1,4 +1,6 @@
-export default async function MovieDetail(props) {
+const MovieDetail = async (props) => {
   const params = await props.params;
-  return <h1>movie / {params.id}</h1>;
-}
+  const id = params.id;
+  return <h1>movie / {id}</h1>;
+};
+export default MovieDetail;

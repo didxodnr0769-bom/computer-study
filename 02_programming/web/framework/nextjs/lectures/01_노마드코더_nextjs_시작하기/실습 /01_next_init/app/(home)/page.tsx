@@ -1,27 +1,31 @@
-"use client";
+import Link from "next/link";
 
-import { useEffect, useState } from "react";
+export const metadata = {
+  title: "Home",
+};
 
-export default function Page() {
-  const [isLoading, setIsLoading] = useState(true);
-  const [movies, setMovies] = useState([]);
+export const URL = "https://nomad-movies.nomadcoders.workers.dev/movies";
 
-  const getData = async () => {
-    const response = await fetch(
-      "https://nomad-movies.nomadcoders.workers.dev/movies"
-    );
-    setIsLoading(false);
+const getMovies = async () => {
+  const res = await fetch(URL).then((res) => res.json());
 
-    const json = await response.json();
-    setMovies(json);
-  };
-  useEffect(() => {
-    getData();
+  return res;
+};
+export default async function HomePage() {
+  await new Promise((resolve) => {
+    setTimeout(() => {
+      resolve({});
+    }, 1000);
   });
+  const movies = await getMovies();
+
   return (
     <div>
-      {/* <h1>루트 경로입니다zz.!</h1> */}
-      {isLoading ? "로딩중!" : JSON.stringify(movies)}
+      {movies.map((movie) => (
+        <li>
+          <Link href={`/movies/${movie.id}`}>{movie.title}</Link>
+        </li>
+      ))}
     </div>
   );
 }
