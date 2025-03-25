@@ -1,4 +1,5 @@
 import Gnb from "../components/gnb";
+import "./styles/global.css";
 
 export const metadata = {
   title: "Next.js",

@@ -1,11 +1,12 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import styles from "../app/styles/gnb.module.css";
 
 export default function Gnb() {
   const pathname = usePathname();
   return (
-    <div>
+    <div className={styles.GnbContainer}>
       <ul>
         <li>
           <Link href="/">루트 경로 화면 {pathname === "/" ? "🤏" : ""} </Link>
